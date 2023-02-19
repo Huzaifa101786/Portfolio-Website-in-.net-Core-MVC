@@ -1,0 +1,84 @@
+﻿@model Portfolio_website.Models.Experience
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<section class="ftco-section" >
+	<div class="row justify-content-center">
+		<div class="col-md-6 text-center mb-5">
+			<h1 class="title text-center">Add Experience</h1>
+		</div>
+	</div>
+	<div class="container" id="form_center">
+		
+		<div class="row justify-content-center" id="form_center row_in">
+			<div class="col-md-12" id="form_center">
+				<div class="wrapper" >
+					<div class="row no-gutters" id="row_in">
+						<div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch" >
+							<div class="contact-wrap w-100 p-md-5 p-4">
+								<h3 class="mb-4 white_txt">Please fill the form</h3>
+								
+								<form method="post" action="Add_Experience" class="contactForm">
+									<div class="row" id="row_in">
+										<div class="col-md-6 ">
+											<div class="form-group">
+												<label class="label white_txt" for="">Company Name</label>
+												<input type="text" asp-for="Company_Name" class="form-control "  placeholder="Company Name">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group ">
+												<label class="label white_txt" for="">Experience Type</label>
+												<input type="text" asp-for="Experience_type" class="form-control" placeholder="Experience Type">
+											</div>
+										</div>
+										<div class="col-md-6 pt-2">
+											<div class="form-group">
+												<label class="label white_txt" for="">Position</label>
+												<input type="text" asp-for="position" class="form-control " placeholder="position">
+											</div>
+										</div>
+										<div class="col-md-6 pt-2">
+											<div class="form-group">
+												<label class="label white_txt" for="">Title / Domain Name</label>
+												<input type="text" asp-for="Domain_Name" class="form-control " placeholder="Domain Name">
+											</div>
+										</div>
+										<div class="col-md-6 pt-2">
+											<div class="form-group">
+												<label class="label white_txt" for="">Experience Level</label>
+												<input type="text" asp-for="Level" class="form-control " placeholder="Experience level">
+											</div>
+										</div>
+										<div class="col-md-6 pt-2">
+											<div class="form-group">
+												<label class="label white_txt" for="">Add Image</label>
+												<input type="text" asp-for="Image" class="form-control">
+											</div>
+										</div>
+										<div class="col-md-12 pt-2">
+											<div class="form-group">
+												<label class="label white_txt" for="">Description</label>
+												<textarea asp-for="Description" class="form-control " cols="30" rows="4" placeholder="Description"></textarea>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group pt-3">
+												<input type="submit" value="Submit" class="btn btn-primary">
+												<div class="submitting"></div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

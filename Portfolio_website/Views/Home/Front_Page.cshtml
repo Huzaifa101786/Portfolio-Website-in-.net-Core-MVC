@@ -1,0 +1,148 @@
+﻿@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+@*@using Multiple_Model_Core_MVC.Models*@
+@model dynamic
+
+<div class="container-fluid">
+    @foreach (UserDetails us in Model.use)
+     {
+<section class="home" id="home">
+    <div class="max-width">
+        <div class="home-content">
+            <div class="text-1 ">Hello, my name is</div>
+                    <div class="text-2 text-uppercase">@us.Name</div>
+            <div class="text-3">and I'm a @us.TagLine<span class="typing"></span></div>
+                    <a asp-action="Contact">Contact me</a>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<div class="container">
+    <h1 class="title text-center">About me</h1>
+    <div class="row">
+        <div class="col-md-6" style="height: 450px">
+            <img id="img_fit" src="~/Images/front.png" alt="">
+        </div>
+        <div class="col-md-6" id="abt_me">
+            
+                <p id="abt_me">@us.AboutMe</p>            
+            
+        
+            <div style="padding-left:40px;margin-top:20px">
+                <a class="button btn-danger" style="padding:10px 10px; border-radius:7px" asp-action="CV">CHECK MY CV</a>
+            </div>
+             
+        </div>
+    </div>
+</div>
+    <br>
+    <br>
+
+
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <nav class="social">
+
+
+        <ul>
+            <li><a href="https://twitter.com/highflyer910">Twitter <i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://github.com/Huzaifa101786?tab=repositories">Github <i class="fa fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/muhammad-huzaifa-1b406a23b/">Linkedin <i class="fa fa-linkedin"></i></a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+    <div class="container py-3 text-lg-center">
+        <h1 class="text-center title">MY EXPERIENCES</h1>
+        <a asp-action="Add_Experience" class="button btn-light add_ex" >Add Experience</a>
+    </div>
+
+<div class="container">
+<div class="row">
+        @foreach (Experience exp in Model.Exp)
+        {
+            <div class="container container_exp">
+                <img class="img_exp" src="@exp.Image" alt="" />
+                <p class="title_exp">@exp.Domain_Name</p>
+                <p class="title_exp2">@exp.Company_Name</p>
+                
+                 <div class="overlay_exp"></div>
+                    <div class="button button_exp"><a href="/Home/Exp_Details/@exp.Experience_Id"> CHECK DETAILS </a></div>
+            </div>       
+        }
+        </div>
+    </div>
+        
+<br />
+<br />
+  }  
+    <div class="container py-3 text-lg-center">
+        <h1 class="text-center title">MY PROJECTS</h1>
+            <a asp-action="Add_Proj" class="button btn-light add_ex">Add Experience</a>
+        </div>
+
+
+    <div class="container" style="margin-top:50px;">
+        <div class="row mt">
+
+            @*@foreach (var data in Model)*@
+            @foreach (Portfolio_Data data in Model.portf)
+            {
+                    <div class="container container_proj"> @*col col-sm-4*@ 
+                    <div class="card-sl">
+                        <div class="card-image">
+
+                            <img class="imgsm" src="@data.Pic_1" />
+
+                        </div>
+
+                        <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
+                            <div class="card-heading text-uppercase text-center" style="color:dimgrey">
+                            @data.Proj_Name
+                        </div>                        
+                        <div class="card-text text-center">
+                                <b>Language:</b> @data.Proj_Language
+                        </div>
+                        <div class="card-text text-center">
+                                <b>Project Type:</b> @data.Proj_Type
+                        </div>
+                            <div class="pb-4 card-text text-center">
+                                <b>Description:</b> @data.Proj_Description
+                            </div>
+                        
+                        <a asp-action="Proj_details" class="card-button"> Check Details</a>
+                    </div>
+                </div>        
+            }
+        </div>
+    </div>
+    </div>
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

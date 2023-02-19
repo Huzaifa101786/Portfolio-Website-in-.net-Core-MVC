@@ -1,0 +1,81 @@
+﻿@model Portfolio_website.Models.Portfolio_Data
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+<section class="ftco-section" >
+	<div class="row justify-content-center">
+		<div class="col-md-6 text-center mb-5">
+			<h1 class="title text-center">Add PROJECT</h1>
+		</div>
+	</div>
+	<div class="container" id="form_center">
+
+		<div class="row justify-content-center" id="form_center row_in">
+			<div class="col-md-12" id="form_center">
+				<div class="wrapper" >
+					<div class="row no-gutters" id="row_in">
+						<div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch" >
+							<div class="contact-wrap w-100 p-md-5 p-4">
+								<h3 class="mb-4 white_txt">Please fill the form</h3>
+
+								<form method="post" action="Add_Proj" class="contactForm">
+									<div class="row" id="row_in">
+										<div class="col-md-6 ">
+											<div class="form-group">
+												<label class="label white_txt" for="">Project Name</label>
+												<input type="text" asp-for="Proj_Name" class="form-control " placeholder="your project name">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group ">
+												<label class="label white_txt" for="">Project Type</label>
+												<input type="text" asp-for="Proj_Type" class="form-control" placeholder="your project type">
+											</div>
+										</div>
+										<div class="col-md-6 pt-2">
+											<div class="form-group">
+												<label class="label white_txt" for="">Project Language</label>
+												<input type="text" asp-for="Proj_Language" class="form-control " placeholder="project lang i.e C#">
+											</div>
+										</div>
+										<div class="col-md-6 pt-2">
+											<div class="form-group">
+												<label class="label white_txt" for="">Add Image</label>
+												<input type="text" asp-for="Pic_1" class="form-control " placeholder="Add image address">
+											</div>
+										</div>
+										<div class="col-md-6 pt-2">
+											<div class="form-group">
+												<label class="label white_txt" for="">Add Video</label>
+												<input type="text" asp-for="video" class="form-control " placeholder="Add demo video address">
+											</div>
+										</div>
+										
+										<div class="col-md-12 pt-2">
+											<div class="form-group">
+												<label class="label white_txt" for="">Project Description</label>
+												<textarea asp-for="Proj_Description" class="form-control " cols="30" rows="12" placeholder="describe your project in detail"></textarea>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group pt-3">
+												<input type="submit" value="Submit" class="btn btn-primary">
+												<div class="submitting"></div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+

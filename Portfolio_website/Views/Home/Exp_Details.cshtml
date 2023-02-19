@@ -1,0 +1,67 @@
+﻿@model Portfolio_website.Models.Experience
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form asp-action="Delete" style="background: #ffffff42;">
+    <div class="card float-right" style="background: #ffffff42; backdrop-filter: blur(10px);">
+        <div class="row">
+            <div class="col-sm-5">
+                <img id="set_img" src="" class="d-block w-100 h-100" alt="">
+
+            </div>
+            <div class="col-sm-7">
+                <div class="card-block">
+                   
+                        
+                        @*<input type="text hidden" class="form-control" asp-for="Experience_Id" readonly />*@
+                    
+                    <div class="mb-3">
+                        <label for="" class="form-label"><b>Domain Name</b></label>
+                        <input type="text" class="form-control" asp-for="Domain_Name" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label"><b>Experience Level</b></label>
+                        <input type="text" class="form-control" asp-for="Level" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label"><b>Company Name</b></label>
+                        <input type="text" class="form-control" asp-for="Company_Name" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label"><b>Experience Type</b></label>
+                        <input id="img_add" type="text" class="form-control" asp-for="Experience_type" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label"><b>Position</b></label>
+                        <input id="img_add" type="text" class="form-control" asp-for="position" />
+                    </div>
+                    <div class="mb-3" style="display:none">
+                        <label for="" class="form-label"><b>Image</b></label>
+                        <input id="img_adds"  type="text" class="form-control" asp-for="Image" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label"><b>Description</b></label>
+                        <textarea cols="30" rows="5" type="text" class="form-control" asp-for="Description"></textarea>
+                    </div>
+
+
+
+                    
+                    @*<button type="submit" class="btn btn-success btn-sm">Update Experience</button>*@
+                    <button type="submit" asp-controller="Home" asp-action="Delete" class="btn btn-danger btn-sm">Delete Experience</button>
+                    <br>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+<script>
+    //$('#set_img').value = $('#img_add').value
+    document.getElementById("set_img").src = document.getElementById("img_adds").value;
+</script>
